@@ -14,14 +14,10 @@ chrome = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 chrome.maximize_window()
 chrome.get("https://the-internet.herokuapp.com/login")
 sleep(5)
-username_input = chrome.find_element(By.ID, "username")
+#daca are atributul name adica vedem name = "..." putem folosi By name
+username_input = chrome.find_element(By.NAME, "username")
 username_input.send_keys("tomsmith")
-chrome.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
+chrome.find_element(By.NAME, "password").send_keys("SuperSecretPassword!")
 sleep(10)
 #ne inchide fereastra de crome
 chrome.quit()
-
-# #xpath
-# //*[@id="username"]
-# #css
-# #username

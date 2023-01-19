@@ -14,14 +14,7 @@ chrome = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 chrome.maximize_window()
 chrome.get("https://the-internet.herokuapp.com/login")
 sleep(5)
-username_input = chrome.find_element(By.ID, "username")
-username_input.send_keys("tomsmith")
-chrome.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
+#daca elementul e de tip a , folosim by_link_text si co[piem textul cu negru
+chrome.find_element(By.LINK_TEXT, "Elemental Selenium").click()
 sleep(10)
-#ne inchide fereastra de crome
 chrome.quit()
-
-# #xpath
-# //*[@id="username"]
-# #css
-# #username

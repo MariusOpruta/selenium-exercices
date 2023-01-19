@@ -1,3 +1,5 @@
+
+
 #librari gratuite care ne trebuie sa accesam selenium si sa avem acces la chrome
 from time import sleep
 from selenium import webdriver
@@ -14,14 +16,7 @@ chrome = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 chrome.maximize_window()
 chrome.get("https://the-internet.herokuapp.com/login")
 sleep(5)
-username_input = chrome.find_element(By.ID, "username")
-username_input.send_keys("tomsmith")
-chrome.find_element(By.ID, "password").send_keys("SuperSecretPassword!")
+#daca elementul e de tip a , folosim by_partial_link_text si scriem o bucata din textul cu negru
+chrome.find_element(By.PARTIAL_LINK_TEXT, "Elemental").click()
 sleep(10)
-#ne inchide fereastra de crome
 chrome.quit()
-
-# #xpath
-# //*[@id="username"]
-# #css
-# #username
